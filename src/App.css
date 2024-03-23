@@ -1,61 +1,172 @@
-.header {
-    margin-left: 50px;
-    margin-top: 40px;
+body, #root {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh; /* Define a altura do corpo e do contêiner raiz para ocupar toda a altura da janela do navegador */
+    margin: 0;
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+  }
+  
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Estilos para a animação de texto */
+  .animated-text {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-container {
+    margin-top: -150px;
+  }
+  
+  .scroll-down-text {
+    color: #fff;
     font-size: 20px;
-}
+    margin-top: 20px;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f51aa4; /* Cor de fundo rosa */
+    z-index: -1;
+  }
+  
+  .welcome-text {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    padding-top: 200px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .btn-scroll {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #f51aa4;
+    border: 2px solid;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-.container p, h1, button {
-    margin-left: 50px;
-}
-
-.about {
-margin-top: 70px;    
-font-size: 20px;
-color: #F51AA4;
-}
-
-.mentor {
-    margin-top: 30px;
-    font-size: 50px;
-}
-
-.text {
+  .animated-text {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw; /* Altera para largura de 100vw para ocupar toda a largura da janela */
+  }
+  
+  
+  /* Estilos para o restante do conteúdo */
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Alinhamento dos elementos dentro do container */
+  .container p,
+  .container h1,
+  .container button {
+    margin-left: 50px; /* Removendo margem para alinhar à esquerda */
+  }
+  
+  .about {
     font-size: 20px;
-}
-
-.button-container {
+    color: #f51aa4;
+  }
+  
+  .mentor {
+    font-size: 40px; /* Tornando o tamanho um pouco menor */
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+  
+  .button-container {
     display: flex;
     margin-top: 30px;
   }
   
   .btn-contact,
   .btn-about {
-    background-color: #F51AA4;
+    width: 115px;
+    height: 43px;
+    border-radius: 8px;
+    margin-right: 10px; /* Ajustando margem para espaçamento entre botões */
+  }
+  
+  .btn-contact {
+    background-color: #f51aa4;
     color: #ffffff;
     border: none;
-    border-radius: 8px;
-    padding: 8px 24px;
-    gap: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
   .btn-about {
-    background-color: #f2f2f2; /* Defina a cor cinza claro para o botão "Saiba Mais" */
-    color: #333; /* Defina a cor do texto do botão "Saiba Mais" */
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
   }
   
-  .btn-contact:hover,
+  .btn-contact:hover {
+    background-color: #f2f2f2;
+    color: #000000;
+  }
+  
   .btn-about:hover {
-    background-color: #F51AA4;
+    background-color: #f51aa4;
+    color: #ffffff;
   }
   
-  .circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color:#F51AA4;
-    clip-path: circle(800px at right 100px);
+  .about-container {
+    display: flex; /* Alterando para flex para alinhar itens verticalmente */
+    align-items: center; /* Alinhando itens verticalmente */
+    margin-left: 80px;
+    margin-top: 200px;
   }
+
+  .about-container h2 {
+    color: #f51aa4;
+  }
+  
+  .text {
+    max-width: 600px; /* Adicionando largura máxima para limitar o texto */
+  }
+  
+  .photo-mentor img {
+    border-radius: 50px;
+    margin-left: 900px;
+    margin-top: -450px;
+  }
+  

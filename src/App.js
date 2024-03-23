@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import fotoLanding from '../src/assets/foto-landing.png'; // Importa a fotoLanding
 
-function Header() {
+function AnimatedText({ onClick }) {
   return (
-    <div className="header">
-      <p>Mentoria SheCode</p>
+    <div className="animated-text">
+      <div className="background"></div>
+      <div className="text-container">
+        <h1 className="welcome-text">Olá, seja bem-vinda à Mentoria SheCode!</h1>
+        <button className="btn-scroll" onClick={onClick}>Saiba Mais</button>
+      </div>
+    </div>
+  );
+}
+
+function AboutSectionPerson() {
+  return (
+    <div className="about-container" id="about">
+      <div className="text">
+        <h2 className="about-me">Quem sou eu?</h2>
+        <p>Muito prazer! Sou a Anny, desenvolvedora full-stack formada em Análise e Desenvolvimento de Sistemas,
+          mentora front-end e criadora de conteúdo. Minha paixão é ajudar as pessoas e minha missão é impulsionar o feminino 
+          no mundo da tecnologia, agregando mulheres nesse universo e apoiando-as no aprendizado em front-end. 
+          Estou aqui para compartilhar conhecimento, oferecer suporte e criar uma comunidade onde todas possam prosperar juntas.
+          Seja bem-vinda ao meu mundo de desenvolvimento e aprendizado!</p>
+          {/* Adiciona a fotoLanding */}
+          <div className="photo-mentor">
+            <img src={fotoLanding} alt="Foto da Mentora" />
+          </div>
+      </div>
     </div>
   );
 }
@@ -12,24 +36,27 @@ function Header() {
 function AboutSection() {
   return (
     <div className="container">
-      <p className="about">Desenvolvimento Front-End</p>
-      <h1 className="mentor">Olá, seja bem-vinda a <br/>Mentoria SheCode</h1>
+      <h1 className="mentor">Mentoria SheCode</h1>
       <p className="text">Descubra seu potencial no desenvolvimento front-end com mentoria exclusiva para mulheres. 
-      <br/>Aprenda de forma personalizada, supere desafios e alcance seus objetivos na carreira de programação! 
-      <br/>Junte-se a nós e faça parte de uma comunidade que apoia seu crescimento <br/>e sucesso nesse mundão de códigos!</p>
+      Aprenda de forma personalizada, supere desafios e alcance seus objetivos na carreira de programação! 
+      Junte-se a nós e faça parte de uma comunidade que apoia seu crescimento e sucesso nesse mundão de códigos!</p>
       <div className="button-container">
-      <button className="btn-contact">Entre em contato! </button>
-      <button className="btn-about">Saiba Mais!</button>
+        <button className="btn-contact">Entre em contato! </button>
       </div>
-      <div className="circle"></div>
     </div>
   );
 }
 
 function App() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="App">
-      <Header />
+      <AnimatedText onClick={scrollToAbout} />
+      <AboutSectionPerson />
       <AboutSection />
     </div>
   );
